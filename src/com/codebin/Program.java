@@ -35,37 +35,29 @@ public class Program {
                 .collect(Collectors.toList());
     }
 
-// method return the list which contains only id number of item and its quantity
+    // method return the list which contains only id number of item and its quantity
     public List<String> returnQuantityList() throws IOException {
         List<String> allLines = returnSelectedLines();
         List<String> quantityList;
         quantityList = allLines.stream()
                 .filter(x -> x.contains(",,"))
                 .collect(Collectors.toList());
-        FileWriter fileWriter = new FileWriter("d:/quantityList.txt");
-        for (String line : quantityList) {
-            fileWriter.write(line + System.lineSeparator());
-        }
-        fileWriter.close();
         return quantityList;
 
     }
-// method returns the list of items' names with corresponding id numbers
+
+    // method returns the list of items' names with corresponding id numbers
     public List<String> returnProductList() throws IOException {
         List<String> allLines = returnSelectedLines();
         List<String> productList;
         productList = allLines.stream()
                 .filter(x -> !x.contains(",,"))
                 .collect(Collectors.toList());
-        FileWriter fileWriter = new FileWriter("d:/productList.txt");
-        for (String line : productList) {
-            fileWriter.write(line + System.lineSeparator());
-        }
-        fileWriter.close();
         return productList;
 
     }
-// method produce one list of product and quantities from two lists
+
+    // method produce one list of product and quantities from two lists
 // code fits products and quantities by id number
     public List<String> returnProductAndQuantityList() throws IOException {
         List<String> productList = returnProductList();
@@ -80,16 +72,11 @@ public class Program {
                 }
             }
         }
-        FileWriter fileWriter = new FileWriter("d:/productAndQuantityList.txt");
-        for (String line : productAndQuantityList) {
-            fileWriter.write(line + System.lineSeparator());
-        }
-        fileWriter.close();
         return productAndQuantityList;
 
     }
 
-//    method return duplicated items with their quantities and remove not repeated items
+    //    method return duplicated items with their quantities and remove not repeated items
     public List<String> getListOfRepeatedNamesAndQuantities() throws IOException {
         List<String> productAndQuantityList = returnProductAndQuantityList();
         List<String> resultList = new ArrayList<>();
@@ -119,7 +106,7 @@ public class Program {
 
     }
 
-// Method write to file output result of application and return result String
+    // Method write to file output result of application and return result String
 // that is showed by app
     public String writeResultToFile() throws IOException {
         List<String> finalList = getListOfRepeatedNamesAndQuantities();
@@ -127,7 +114,7 @@ public class Program {
         for (String line : finalList) {
             resultOutput += line + System.lineSeparator();
         }
-        FileWriter fileWriter = new FileWriter("d:/output.txt");
+        FileWriter fileWriter = new FileWriter("c:/users/damazy/downloads/output.txt");
         fileWriter.write(resultOutput);
         fileWriter.close();
         return resultOutput;
