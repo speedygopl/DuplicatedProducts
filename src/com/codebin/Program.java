@@ -65,7 +65,8 @@ public class Program {
         return productList;
 
     }
-
+// method produce one list of product and quantities from two lists
+// code fits products and quantities by id number
     public List<String> returnProductAndQuantityList() throws IOException {
         List<String> productList = returnProductList();
         List<String> quantityList = returnQuantityList();
@@ -88,6 +89,7 @@ public class Program {
 
     }
 
+//    method return duplicated items with their quantities and remove not repeated items
     public List<String> getListOfRepeatedNamesAndQuantities() throws IOException {
         List<String> productAndQuantityList = returnProductAndQuantityList();
         List<String> resultList = new ArrayList<>();
@@ -115,7 +117,7 @@ public class Program {
 
     }
 
-
+// Method write to file output result of application
     public String writeResultToFile() throws IOException {
         List<String> finalList = getListOfRepeatedNamesAndQuantities();
         String resultOutput = "";

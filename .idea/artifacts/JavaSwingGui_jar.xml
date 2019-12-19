@@ -2,7 +2,7 @@
   <artifact type="jar" name="JavaSwingGui:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/JavaSwingGui_jar</output-path>
     <root id="archive" name="JavaSwingGui.jar">
-      <element id="module-output" name="JavaSwingGui" />
+      <element id="module-output" name="DuplicatedProducts" />
     </root>
   </artifact>
 </component>
