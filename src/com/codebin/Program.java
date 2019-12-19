@@ -104,7 +104,9 @@ public class Program {
                 namesAndQuantitiesMap.put(nameAndQuantityArray[0], Integer.parseInt(nameAndQuantityArray[1]));
 
             } else {
-                namesAndQuantitiesMap.put(nameAndQuantityArray[0], namesAndQuantitiesMap.get(nameAndQuantityArray[0]) + Integer.parseInt(nameAndQuantityArray[1]));
+                namesAndQuantitiesMap.put(nameAndQuantityArray[0],
+                        namesAndQuantitiesMap.get(nameAndQuantityArray[0])
+                                + Integer.parseInt(nameAndQuantityArray[1]));
                 if (!resultList.contains(nameAndQuantityArray[0]))
                     resultList.add(nameAndQuantityArray[0]);
             }
@@ -117,16 +119,18 @@ public class Program {
 
     }
 
-// Method write to file output result of application
+// Method write to file output result of application and return result String
+// that is showed by app
     public String writeResultToFile() throws IOException {
         List<String> finalList = getListOfRepeatedNamesAndQuantities();
         String resultOutput = "";
         for (String line : finalList) {
             resultOutput += line + System.lineSeparator();
         }
-        System.out.println(resultOutput);
+        FileWriter fileWriter = new FileWriter("d:/output.txt");
+        fileWriter.write(resultOutput);
+        fileWriter.close();
         return resultOutput;
-
     }
 
 
