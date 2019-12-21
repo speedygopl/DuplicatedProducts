@@ -57,7 +57,7 @@ public class Program {
 
     }
 
-    // method produce one list of product and quantities using two lists
+    // method produce one list of product and quantities using two lists,
 // code fits products and quantities by id number
     public List<String> returnProductAndQuantityList() throws IOException {
         List<String> productList = returnProductList();
@@ -72,24 +72,25 @@ public class Program {
                 }
             }
         }
+        productAndQuantityList = productAndQuantityList.stream()
+                .map(x -> x.replaceAll("[0-9]{8},", ""))
+                .collect(Collectors.toList());
         return productAndQuantityList;
 
     }
 
-    //    method return duplicated items with their quantities and remove not repeated items
+    //    method return list of duplicated items with their quantities
+    //    and remove not repeated items
     public List<String> getListOfRepeatedNamesAndQuantities() throws IOException {
         List<String> productAndQuantityList = returnProductAndQuantityList();
         List<String> resultList = new ArrayList<>();
         List<String> finalList = new ArrayList<>();
         Map<String, Integer> namesAndQuantitiesMap = new HashMap<>();
-        productAndQuantityList = productAndQuantityList.stream()
-                .map(x -> x.replaceAll("[0-9]{8},", ""))
-                .collect(Collectors.toList());
         for (int i = 0; i < productAndQuantityList.size(); i++) {
             String[] nameAndQuantityArray = productAndQuantityList.get(i).split(":::");
             if (!namesAndQuantitiesMap.containsKey(nameAndQuantityArray[0])) {
-                namesAndQuantitiesMap.put(nameAndQuantityArray[0], Integer.parseInt(nameAndQuantityArray[1]));
-
+                namesAndQuantitiesMap.put(nameAndQuantityArray[0],
+                        Integer.parseInt(nameAndQuantityArray[1]));
             } else {
                 namesAndQuantitiesMap.put(nameAndQuantityArray[0],
                         namesAndQuantitiesMap.get(nameAndQuantityArray[0])
@@ -98,12 +99,11 @@ public class Program {
                     resultList.add(nameAndQuantityArray[0]);
             }
         }
-
         for (int i = 0; i < resultList.size(); i++) {
-            finalList.add(resultList.get(i).concat(":::" + namesAndQuantitiesMap.get(resultList.get(i)).toString()));
+            finalList.add(resultList.get(i).concat(":::" +
+                    namesAndQuantitiesMap.get(resultList.get(i)).toString()));
         }
         return finalList;
-
     }
 
     // Method writes to file output result of application and return result String
