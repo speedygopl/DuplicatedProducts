@@ -16,6 +16,8 @@ public class App {
     private final JFileChooser openFileChooser;
     protected static String path;
 
+    // constructor sets specification of Swing GUI application, sets action for "Select File" button and
+//    sets action for "RUN" button
     public App() {
         openFileChooser = new JFileChooser();
         openFileChooser.setCurrentDirectory(new File("c:\\users\\damazy\\Downloads"));
@@ -43,24 +45,26 @@ public class App {
                     } catch (IOException ioe) {
                         selectFileLabel.setText("Failed to load the file !!!");
                     }
-                }else {
+                } else {
                     selectFileLabel.setText("No file chosen !!!");
                 }
-                    path = openFileChooser.getSelectedFile().getAbsolutePath();
-                }
-            });
-        }
-
-        public String startProgram () throws IOException {
-            Program program = new Program();
-            return program.writeResultToFile();
-        }
-
-        public static void main (String[]args){
-            JFrame frame = new JFrame("Powielone Produkty");
-            frame.setContentPane(new App().PanelMain);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-        }
+                path = openFileChooser.getSelectedFile().getAbsolutePath();
+            }
+        });
     }
+
+    // method that starts methods in Program.java after push RUN button
+    public String startProgram() throws IOException {
+        Program program = new Program();
+        return program.writeResultToFile();
+    }
+
+    // main mathod that Run application
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Powielone Produkty");
+        frame.setContentPane(new App().PanelMain);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}

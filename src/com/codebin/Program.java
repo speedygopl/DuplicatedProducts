@@ -57,7 +57,7 @@ public class Program {
 
     }
 
-    // method produce one list of product and quantities from two lists
+    // method produce one list of product and quantities using two lists
 // code fits products and quantities by id number
     public List<String> returnProductAndQuantityList() throws IOException {
         List<String> productList = returnProductList();
@@ -106,7 +106,7 @@ public class Program {
 
     }
 
-    // Method write to file output result of application and return result String
+    // Method writes to file output result of application and return result String
 // that is showed by app
     public String writeResultToFile() throws IOException {
         List<String> finalList = getListOfRepeatedNamesAndQuantities();
