@@ -1,6 +1,5 @@
 # DuplicatedProducts
-Application that searches for duplicated products in csv file from Allegro Selling Manager ms.allegro.pl
-
+Application that shows "transaction list's" duplicated products and their quantities using Allegro Selling Manager ms.allegro.pl csv file.
 
 INSTRUKCJA UŻYTKOWNIKA
 
