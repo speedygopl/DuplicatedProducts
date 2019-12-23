@@ -20,7 +20,7 @@ public class App {
 //    sets action for "RUN" button
     public App() {
         openFileChooser = new JFileChooser();
-        openFileChooser.setCurrentDirectory(new File("c:\\users\\damazy\\Downloads"));
+        openFileChooser.setCurrentDirectory(new File("c:\\users\\"));
         openFileChooser.setFileFilter(new FileNameExtensionFilter("CSV files", "csv"));
 
         buttonRUN.addActionListener(new ActionListener() {
@@ -49,6 +49,7 @@ public class App {
                     selectFileLabel.setText("No file chosen !!!");
                 }
                 path = openFileChooser.getSelectedFile().getAbsolutePath();
+
             }
         });
     }

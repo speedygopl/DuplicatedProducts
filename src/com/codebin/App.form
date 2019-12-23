@@ -46,7 +46,7 @@
         <properties>
           <background color="-4516045"/>
           <foreground color="-4516045"/>
-          <text value="Select the file first, then Run !!!"/>
+          <text value="Select file first, then Run !!!"/>
         </properties>
       </component>
       <component id="56bfa" class="javax.swing.JButton" binding="selectFileButton" default-binding="true">

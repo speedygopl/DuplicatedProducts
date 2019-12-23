@@ -1,6 +1,7 @@
 package com.codebin;
 
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -114,7 +115,8 @@ public class Program {
         for (String line : finalList) {
             resultOutput += line + System.lineSeparator();
         }
-        FileWriter fileWriter = new FileWriter("c:/users/damazy/downloads/output.txt");
+        new File("C:\\duplicatedProductsOutput").mkdir();
+        FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\output.txt");
         fileWriter.write(resultOutput);
         fileWriter.close();
         return resultOutput;
