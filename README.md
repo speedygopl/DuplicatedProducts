@@ -16,7 +16,7 @@ c.
 
 d. naciskamy eksportuj dane
 
-2.Uruchamiamy program Duplicated Products
+2. Uruchamiamy program Duplicated Products
 a. naciskamy przycisk Select File
 b. wyszukujemy nasz plik utworzony w menedżerze sprzedaży i otwieramy go
 c. naciskamy przycisk RUN
