@@ -1,5 +1,6 @@
 # DuplicatedProducts
 Application that shows "transaction list's" duplicated products and their quantities using Allegro Selling Manager ms.allegro.pl csv file.
+It also returns list of products that contains "shimano" string;
 
 INSTRUKCJA UŻYTKOWNIKA
 
