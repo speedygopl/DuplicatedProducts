@@ -80,6 +80,8 @@ public class Program {
 
     }
 
+    // method that searches shimano products across productAndQuantityList and return the result
+//    to file shimanoProducts.txt
     public void returnShimanoProducts() throws IOException {
         List<String> productAndQuantityList = returnProductAndQuantityList();
         String result = "";
@@ -91,7 +93,7 @@ public class Program {
         for (String s : collect) {
             result += s + System.lineSeparator();
         }
-        FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\shimano.txt");
+        FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\shimanoProducts.txt");
         fileWriter.write(result);
         fileWriter.close();
 
@@ -133,7 +135,7 @@ public class Program {
             resultOutput += line + System.lineSeparator();
         }
         new File("C:\\duplicatedProductsOutput").mkdir();
-        FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\output.txt");
+        FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\duplicatedProducts.txt");
         fileWriter.write(resultOutput);
         fileWriter.close();
         returnShimanoProducts();
