@@ -80,6 +80,23 @@ public class Program {
 
     }
 
+    public void returnShimanoProducts() throws IOException {
+        List<String> productAndQuantityList = returnProductAndQuantityList();
+        String result = "";
+        List<String> collect = productAndQuantityList.stream()
+                .map(x -> x.replaceAll("SHIMANO", "shimano"))
+                .map(x -> x.replaceAll("Shimano", "shimano"))
+                .filter(x -> x.contains("shimano"))
+                .collect(Collectors.toList());
+        for (String s : collect) {
+            result += s + System.lineSeparator();
+        }
+        FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\shimano.txt");
+        fileWriter.write(result);
+        fileWriter.close();
+
+    }
+
     //    method return list of duplicated items with their quantities
     //    and remove not repeated items
     public List<String> getListOfRepeatedNamesAndQuantities() throws IOException {
@@ -119,6 +136,7 @@ public class Program {
         FileWriter fileWriter = new FileWriter("c:\\duplicatedProductsOutput\\output.txt");
         fileWriter.write(resultOutput);
         fileWriter.close();
+        returnShimanoProducts();
         return resultOutput;
     }
 
