@@ -21,8 +21,8 @@ a. naciskamy przycisk Select File
 b. wyszukujemy nasz plik utworzony w menedżerze sprzedaży i otwieramy go
 c. naciskamy przycisk RUN
 
-3. Efekt działania programu zobaczymy w wyskakującym okienku oraz w nowo powstałym pliku o nazwie output.txt.
+3. Efekt działania programu zobaczymy w wyskakującym okienku oraz w nowo powstałym pliku o nazwie duplicatedProducts.txt.
 Plik ten znajdować się będzie w katalogu c:\duplicatedProductsOutput. W tym samym katalogu znajdować się będzie
-plik shimano.txt, zawierający wszystkie produkty marki shimano.
+plik shimanoProducts.txt, zawierający wszystkie produkty marki shimano.
 
 Author : damazy5@wp.pl
