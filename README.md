@@ -22,3 +22,5 @@ c. naciskamy przycisk RUN
 
 3. Efekt działania programu zobaczymy w wyskakującym okienku oraz w nowo powstałym pliku o nazwie output.txt.
 Plik ten znajdować się będzie w katalogu c:\duplicatedProductsOutput
+
+Author : damazy5@wp.pl
